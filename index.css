@@ -40,10 +40,24 @@
     /* Hide the board numbers and letters */
     display:none;
 }
+/* #currentState{ */
+
+/* }
 #currentNote{
     position:absolute;
     bottom:2vh;
     left:50%;
     transform: translateX(-50%);
     font-size: 50px;
+} */
+#info{
+    position:absolute;
+    bottom:2vh;
+    left:50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    white-space: nowrap;
+}
+.highlightedRow>div{
+    background:rgba(104, 68, 214, 0.77);
 }
