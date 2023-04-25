@@ -122,9 +122,9 @@ const freelizer = async () => {
     await init()
 
     return {
-        start: () => update(),
-        stop: () => cancelAnimationFrame(rafID),
-        subscribe: (fn) => (callbacks = [...callbacks, fn]),
-        unsubscribe: (fn) => (callbacks = callbacks.filter((el) => el !== fn)),
+        freelizerStart: () => update(),
+        freelizerStop: () => cancelAnimationFrame(rafID),
+        freelizerSubscribe: (fn) => (callbacks = [...callbacks, fn]),
+        freelizerUnsubscribe: (fn) => (callbacks = callbacks.filter((el) => el !== fn)),
     }
 }
