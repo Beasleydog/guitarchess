@@ -59,8 +59,29 @@
     white-space: nowrap;
 }
 .highlightedRow>div{
-    background:rgba(104, 68, 214, 0.77);
+    animation: backgroundChange 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes backgroundChangeRow{
+    from{
+        background:auto;
+    }
+    to{
+        background:rgba(212, 118, 24, 0.866);
+    }
+}
+@keyframes backgroundChangeCord{
+    from{
+        background:auto;
+    }
+    to{
+        background:rgba(107,124,230,1);
+    }
 }
 .highlightedCord{
-    background:rgba(104, 68, 214, 0.77);
+    animation: backgroundChange 2s;
+    animation-fill-mode: forwards;
+}
+.indicatedCord{
+    background:rgba(107,124,230,1);
 }

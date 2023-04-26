@@ -3,28 +3,25 @@ async function getNote(onEachNoteChange) {
 
 
         let note = "";
-        let changeTimer = 500;
+
+        const pickedNote = () => {
+            freelizerUnsubscribe(handle);
+            resolve(note);
+        }
+        let pickedNoteTimeout = setTimeout(pickedNote, 2000);
 
         const handle = (data) => {
-            if (onEachNoteChange) onEachNoteChange(data.note);
+            if (onEachNoteChange && data.note != note) onEachNoteChange(data.note);
             window.note = data.note;
+            currentNote.innerText = data.note;
             if (note != data.note || !window.noteList.includes(data.note)) {
-                changeTimer = 500;
                 note = data.note;
+                clearTimeout(pickedNoteTimeout);
+                pickedNoteTimeout = setTimeout(pickedNote, 2000);
             }
         }
 
         freelizerSubscribe(handle);
-
-        const timerLoop = setInterval(() => {
-            changeTimer--;
-            if (changeTimer == 0) {
-                console.log("Note: " + note);
-                clearInterval(timerLoop);
-                freelizerUnsubscribe(handle);
-                resolve(note);
-            }
-        }, 1);
 
     });
 }
