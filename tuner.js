@@ -5,7 +5,7 @@ const autoCorrelate = (buf, sampleRate) => {
     const RMS = Math.sqrt(buf.reduce((acc, el) => acc + el ** 2, 0) / buf.length)
     if (RMS < 0.001) return NaN
 
-    const THRES = 0.2
+    const THRES = Number(threshold.value);
     let r1 = 0
     let r2 = buf.length - 1
     for (let i = 0; i < buf.length / 2; ++i) {
