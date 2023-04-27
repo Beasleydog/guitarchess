@@ -24,7 +24,7 @@ async function gameLoop() {
     await makeMove(game, board1);
     currentState.innerText = game.turn() === "w" ? "White" : "Black";
     if (game.game_over()) {
-        alert("Game Over! " + game.turn() === "w" ? "White" : "Black" + " lost!");
+        alert("Game Over! " + game.turn() === "w" ? "Black" : "White" + " wins! 🥳🥳");
         return;
     }
     gameLoop();
