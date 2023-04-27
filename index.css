@@ -57,9 +57,10 @@
     transform: translateX(-50%);
     font-size: 30px;
     white-space: nowrap;
+    text-align: center;
 }
-.highlightedRow>div{
-    animation: backgroundChange 2s;
+.highlightedRow>div:not(.highlightedCord){
+    animation: backgroundChangeRow 2s;
     animation-fill-mode: forwards;
 }
 @keyframes backgroundChangeRow{
@@ -75,13 +76,30 @@
         background:auto;
     }
     to{
-        background:rgba(107,124,230,1);
+        background:rgb(240, 89, 34);
     }
 }
 .highlightedCord{
-    animation: backgroundChange 2s;
+    animation: backgroundChangeCord 2s;
     animation-fill-mode: forwards;
 }
 .indicatedCord{
-    background:rgba(107,124,230,1);
+    background:rgba(107, 123, 230, 0.488);
+}
+.emoji{
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    position:absolute;
+    font-size: 100px;
+    animation:grow .3s ease-out;
+    animation-fill-mode: forwards;
+}
+@keyframes grow{
+    from{
+        transform:translate(-50%,-50%) scale(0);
+    }
+    to{
+        transform:translate(-50%,-50%) scale(2);
+    }
 }

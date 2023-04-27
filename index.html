@@ -15,10 +15,13 @@
     <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
         integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.9.3/chess.min.js"></script>
     <script src="./tuner.js"></script>
     <script src="./getCordinate.js"></script>
     <script src="./getNote.js"></script>
     <script src="./highlightBoard.js"></script>
+    <script src="./spawnEmoji.js"></script>
+    <script src="./chessHelpers.js"></script>
     <script src="./index.js" defer></script>
     <link rel="stylesheet" href="./index.css">
 </head>
@@ -34,7 +37,7 @@
                 <div>B</div>
                 <div>C</div>
                 <div>D</div>
-                <div>E</div>
+                <div>D#</div>
             </div>
             <div id="board"></div>
         </div>
@@ -46,11 +49,12 @@
             <div>B</div>
             <div>C</div>
             <div>D</div>
-            <div>E</div>
+            <div>D#</div>
         </div>
     </div>
     <div id="info">
-        <div id="currentState">White, picking piece</div>
+        <!-- <input type="range" min="14000" max="37000" id="freq" /> -->
+        <div id="currentState">White</div>
         <div id="currentNote">A</div>
     </div>
 </body>

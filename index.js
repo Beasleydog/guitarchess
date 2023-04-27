@@ -12,15 +12,22 @@
     }
 
     var board1 = Chessboard('board', config);
+    window.board1 = board1;
 
-    let CURRENT_TURN = "white";
-    let CURRENT_STATUS = "picking";
+    const game = new Chess();
+    window.game = game;
 
-
-
-    getCordinate().then((cordinate) => {
-        console.log(cordinate);
-    });
+    gameLoop();
 })();
 
-window.noteList = ["E", "F", "G", "A", "B", "C", "D", "E"];
+async function gameLoop() {
+    await makeMove(game, board1);
+    currentState.innerText = game.turn() === "w" ? "White" : "Black";
+    if (game.game_over()) {
+        alert("Game Over! " + game.turn() === "w" ? "White" : "Black" + " lost!");
+        return;
+    }
+    gameLoop();
+}
+
+window.noteList = ["E", "F", "G", "A", "B", "C", "D", "D#"];

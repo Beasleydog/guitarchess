@@ -113,6 +113,7 @@ const freelizer = async () => {
         const buffer = new Float32Array(FFT_SIZE)
         analyser.getFloatTimeDomainData(buffer)
         const frequency = autoCorrelate(buffer, audioContext.sampleRate)
+        // const frequency = document.getElementById("freq").value;
         callbacks.forEach((fn) =>
             fn(frequency ? getDataFromFrequency(frequency) : {})
         )
