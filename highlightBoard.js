@@ -3,7 +3,6 @@ function highlightRow(rowLetter) {
 
     clearRowHighlights();
     if (row == -1) return;
-    console.log(rowLetter, row)
     document.getElementById("board").children[0].children[0].children[row].classList.add("highlightedRow");
 }
 function clearRowHighlights() {
