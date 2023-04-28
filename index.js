@@ -19,7 +19,7 @@
 
     gameLoop();
 })();
-
+document.documentElement.style.setProperty("--hold-timer", "2s");
 async function gameLoop() {
     await makeMove(game, board1);
     currentState.innerText = game.turn() === "w" ? "White" : "Black";

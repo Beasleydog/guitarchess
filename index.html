@@ -27,6 +27,15 @@
 </head>
 
 <body>
+    <div id="controls">
+        <input type="range" min="0.1" max="2" value=".2" step=".1" id="threshold"
+            oninput="thresholdLabel.innerText=`Threshold ${threshold.value}`" />
+        <label id="thresholdLabel" for="thresholdLab">Threshold .2</label>
+        <input type="range" min="250" max="4000" value="2000" id="noteHoldTime"
+            oninput="noteHoldTimeLabel.innerText=`Hold Note Time ${noteHoldTime.value}`; document.documentElement.style.setProperty(`--hold-timer`, `${noteHoldTime.value/1000}s`);" />
+        <label id="noteHoldTimeLabel" for="noteHoldTime">Hold Note Time 2000</label>
+    </div>
+    <h1 id="title">GuitarChess</h1>
     <div id="boardContainer">
         <div>
             <div id="verticalNotes">
@@ -57,11 +66,7 @@
         <div id="currentState">White</div>
         <div id="currentNote">A</div>
     </div>
-    <div id="controls">
-        <input type="range" min="0.1" max="2" value=".2" step=".1" id="threshold"
-            oninput="thresholdLabel.innerText=`Threshold ${threshold.value}`" />
-        <label id="thresholdLabel" for="thresholdLab">Threshold .2</label>
-    </div>
+
 </body>
 
 </html>

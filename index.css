@@ -1,5 +1,5 @@
 #boardContainer{
-    top:50%;
+    top:55%;
     left:50%;
     transform:translate(-50%,-50%);
     position:absolute;
@@ -60,7 +60,7 @@
     text-align: center;
 }
 .highlightedRow>div:not(.highlightedCord){
-    animation: backgroundChangeRow 2s;
+    animation: backgroundChangeRow var(--hold-timer);
     animation-fill-mode: forwards;
 }
 @keyframes backgroundChangeRow{
@@ -80,7 +80,7 @@
     }
 }
 .highlightedCord{
-    animation: backgroundChangeCord 2s;
+    animation: backgroundChangeCord var(--hold-timer);
     animation-fill-mode: forwards;
 }
 .indicatedCord{
@@ -102,4 +102,12 @@
     to{
         transform:translate(-50%,-50%) scale(2);
     }
+}
+#controls{
+    display: flex;
+    flex-direction: column;
+}
+#title{
+    text-align: center;
+    transform: translateY(5vh);
 }

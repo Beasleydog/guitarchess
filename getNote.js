@@ -8,7 +8,7 @@ async function getNote(onEachNoteChange) {
             freelizerUnsubscribe(handle);
             resolve(note);
         }
-        let pickedNoteTimeout = setTimeout(pickedNote, 2000);
+        let pickedNoteTimeout = setTimeout(pickedNote, Number(noteHoldTime.value));
 
         const handle = (data) => {
             if (onEachNoteChange && data.note != note) onEachNoteChange(data.note);
@@ -17,7 +17,7 @@ async function getNote(onEachNoteChange) {
             if (note != data.note || !window.noteList.includes(data.note)) {
                 note = data.note;
                 clearTimeout(pickedNoteTimeout);
-                pickedNoteTimeout = setTimeout(pickedNote, 2000);
+                pickedNoteTimeout = setTimeout(pickedNote, Number(noteHoldTime.value));
             }
         }
 
