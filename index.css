@@ -3,7 +3,7 @@
     left:50%;
     transform:translate(-50%,-50%);
     position:absolute;
-    width:85vw;
+    width:400px;
 
     display:flex;
     flex-direction: column;
@@ -19,22 +19,22 @@
     /* grid-area: menu; */
 }
 #verticalNotes > div{
-    height:calc(calc(calc(85vw - 20px)) / 8);
-    line-height: calc(calc(85vw - 20px) / 8);
+    height:calc(calc(calc(400px - 20px)) / 8);
+    line-height: calc(calc(400px - 20px) / 8);
     width:20px;
     font-weight: bold;
-    font-size: 4vw;
+    font-size: 16px;
 }
 
 #horizontalNotes{
     padding-left: 20px;
 }
 #horizontalNotes > div{
-    width:calc(calc(calc(85vw - 20px)) / 8);
+    width:calc(calc(calc(400px - 20px)) / 8);
     text-align: center;
     height:20px;
     font-weight: bold;
-    font-size: 4vw;
+    font-size: 16px;
 }
 #board>div>div>div>div>div{
     /* Hide the board numbers and letters */
